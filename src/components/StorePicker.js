@@ -7,3 +7,4 @@ class StorePicker extends React.Component {
 }
 
 export default StorePicker;
+// made some changes

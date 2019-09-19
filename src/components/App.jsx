@@ -3,7 +3,7 @@ import { deflateRawSync } from 'zlib';
 import Header from './Header'
 import Inventory from './Inventory'
 import Order from './Order'
-
+// flott flott still applies in this case
 class App extends React.Component {
     render(){
         return (

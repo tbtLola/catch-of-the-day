@@ -4,7 +4,7 @@ import StorePicker from "./StorePicker";
 import App from "./App";
 import NotFound from "./NotFound";
 
-
+// REACT RULE IS DONT TOUCH THE DOM
 // stateless
 const Router = () => (
   <BrowserRouter>

@@ -3,6 +3,8 @@ import Header from './Header'
 import Inventory from './Inventory'
 import Order from './Order'
 import sampleFishes from '../sample-fishes'
+import Fish from "./Fish"
+
 // methods that update state must live in the same component as where the state lives
 class App extends React.Component {
     state = {
@@ -32,6 +34,9 @@ class App extends React.Component {
             <div className="catch-of-the-day">
                 <div className="menu">
                     <Header tagline="Fresh Seafood market"/>
+                <ul className="fishes">
+                    {Object.keys(this.state.fishes).map(key => <Fish key={key} details={this.state.fishes[key]}></Fish>)}
+                </ul>
                 </div>
                 <Order />
                 <Inventory addFish={this.addFish} loadSampleFishes={this.loadSampleFishes}/>

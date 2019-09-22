@@ -2,11 +2,16 @@ import React from 'react';
 import Header from './Header'
 import Inventory from './Inventory'
 import Order from './Order'
-// methods that update state must live in the same component
+import sampleFishes from '../sample-fishes'
+// methods that update state must live in the same component as where the state lives
 class App extends React.Component {
     state = {
         fishes:{},
         order: {}
+    };
+
+    loadSampleFishes = () => {
+        this.setState({fishes:sampleFishes});
     };
 
     addFish = (fish) => {
@@ -29,7 +34,7 @@ class App extends React.Component {
                     <Header tagline="Fresh Seafood market"/>
                 </div>
                 <Order />
-                <Inventory addFish={this.addFish} />
+                <Inventory addFish={this.addFish} loadSampleFishes={this.loadSampleFishes}/>
             </div>
 
         )

@@ -16,6 +16,15 @@ class App extends React.Component {
         this.setState({fishes:sampleFishes});   
     };
 
+    addToOrder = (key) => {
+        // 1. Take a copy of state
+        const order ={...this.state.order};
+        // 2. Either add to order or update the number in the order
+        order[key] = order[key] + 1 || 1; 
+        // 3. Call set state to update our state object
+        this.setState({order});
+    };
+
     addFish = (fish) => {
         // Updating state
         // 1. Take a copy of existing state (you dont want to modify the actual state)
@@ -35,7 +44,13 @@ class App extends React.Component {
                 <div className="menu">
                     <Header tagline="Fresh Seafood market"/>
                 <ul className="fishes">
-                    {Object.keys(this.state.fishes).map(key => <Fish key={key} details={this.state.fishes[key]}></Fish>)}
+                    {Object.keys(this.state.fishes).map(key => (
+                        <Fish
+                         key={key}
+                         details={this.state.fishes[key]} 
+                         addToOrder={this.addToOrder} 
+                         index={key}/> 
+                    ))}
                 </ul>
                 </div>
                 <Order />

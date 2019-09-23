@@ -1,6 +1,5 @@
 import React from "react";
 import { formatPrice } from "../helpers";
-import { link } from "fs";
 
 class Order extends React.Component {
   renderOrder = key => {
